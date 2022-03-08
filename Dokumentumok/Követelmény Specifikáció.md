@@ -2,6 +2,10 @@
 
 Megrendelőnk eddig papír alapon vezette a különféle sportrendezvényekre való regisztrálást. Ez meglehetősen nehézkes megoldásnak bizonyul, mivel a papír könnyen elveszhet, nem beszélve magáról a regisztrálás nehézségéről. A felhasználóknak személyesen kell regisztrálniuk egy eseményre.
 
+## 2. Vágyálom rendszer
+
+Megrendelőnk szeretné a papíralapú regisztrációt elektronikussá átalakítani. Ehhez egy Android operációs rendszerre készített applikációt szeretne. Ez a megoldás nem csak modernebb, de a felhasználók szempontjából is kényelmesebb, akiknek így nem kell személyesen befáradni egy eseményre regisztrálásához.
+
 ## 3. Jelenlegi üzleti folyamatok:
 
  - Az alapanyagok beszerzése:
