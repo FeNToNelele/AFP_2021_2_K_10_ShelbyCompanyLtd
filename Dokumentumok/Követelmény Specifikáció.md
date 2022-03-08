@@ -1,3 +1,7 @@
+## 1. Jelenlegi helyzet
+
+Megrendelőnk eddig papír alapon vezette a különféle sportrendezvényekre való regisztrálást. Ez meglehetősen nehézkes megoldásnak bizonyul, mivel a papír könnyen elveszhet, nem beszélve magáról a regisztrálás nehézségéről. A felhasználóknak személyesen kell regisztrálniuk egy eseményre.
+
 ## 3. Jelenlegi üzleti folyamatok:
 
  - Az alapanyagok beszerzése:
