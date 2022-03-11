@@ -49,6 +49,7 @@
 <div class="flex justify-center items-center h-screen">
     <div class="mt-10 p-10 w-96 bg-white rounded-lg border border-gray-200 shadow-md sm:p-6 lg:p-8 dark:bg-gray-800 dark:border-gray-700">
         <form class="space-y-6" method="POST" action="{{ route('register') }}">
+            @csrf
             <h3 class="text-2xl text-center text-gray-100 dark:text-gray-300 my-5">Regisztráció</h3>
             <div>
                 <label for="name" class="block mb-2 text-sm font-medium text-gray-100 dark:text-gray-300">Név:</label>
