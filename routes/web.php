@@ -21,5 +21,6 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('/myProfile', [App\Http\Controllers\UserController::class, 'myProfile'])->name('myProfile');
 
 Route::get('/events', [EventsController::class, 'listAllEvents']);
