@@ -14,9 +14,7 @@ use App\Http\Controllers\EventsController;
 |
 */
 
-Route::get('/', function () {
-    return view('index');
-});
+Route::get('/', [App\Http\Controllers\PagesController::class, 'index'])->name('index');
 
 Auth::routes();
 
