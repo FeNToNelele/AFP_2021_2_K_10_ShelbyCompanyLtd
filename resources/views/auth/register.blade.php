@@ -81,7 +81,7 @@
             </div>
             <div class="mt-5">
                 <label for="password-confirm" class="block mb-2 text-sm font-medium text-gray-100 dark:text-gray-300">Jelszó megerősítése:</label>
-                <input type="password-confirm" id="password" placeholder="••••••••" class="form-control @error('password') is-invalid @enderror bg-gray-50 border border-gray-300 text-black text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-black" required name="password_confirmation" required autocomplete="new-password">
+                <input type="password" id="password-confirm " placeholder="••••••••" class="form-control @error('password') is-invalid @enderror bg-gray-50 border border-gray-300 text-black text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-black" required name="password_confirmation" required autocomplete="new-password">
 
                 @error('password')
                     <span class="invalid-feedback" role="alert">
@@ -92,7 +92,7 @@
             <div class="my-5">
                 <label for="accountType" class="block mb-2 text-sm font-medium text-gray-100 dark:text-gray-300">Válasszon fióktípust:</label>
                 <select id="accountType" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-gray-900 dark:focus:ring-blue-500 dark:focus:border-blue-500" onchange="showExtra();">
-                  <option selected>Válasszon...</option>
+                  <option selected disabled hidden>Válasszon...</option>
                   <option value="guest">Külső vendég</option>
                   <option value="student">Hallgató</option>
                   <option value="teacher">Szervező</option>
