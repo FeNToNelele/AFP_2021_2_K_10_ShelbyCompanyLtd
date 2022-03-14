@@ -15,7 +15,18 @@ class EventsController extends Controller
         return view('events.events')->with('esemenyek', $esemenyek);
     }
 
-    public function listAnEvent() {
+    public function listAnEvent($id) {
+        //1 eseményre 1 felhasználó csak 1x tudjon jelentkezni...
+        $jelentkezesekSzama = DB::table('jelentkezes')
+        ->where([
+            ['userId', '=', Auth::user()['id']],
+            ['esemenyId', '=', $id]
+        ])
+        ->count('jelentkezesId');
+        $jelentkezettE = true;
+        if($jelentkezesekSzama <= 0)
+            $jelentkezettE = false;
+
         $esemeny = DB::table('esemeny')
         ->select('id','megnevezes','kapacitas','leiras','kezdet','veg','helyszin','dolgozoid')
         ->where('id',$id)
@@ -26,7 +37,11 @@ class EventsController extends Controller
         $szervezo = DB::table('users')
         ->select('name')
         ->where('id',$esemeny->dolgozoid)->first();
-        return view('events.event')->with('esemeny', $esemeny)->with('jelentkezesek', $jelentkezesek)->with('szervezo',$szervezo);
+        return view('events.event')
+        ->with('esemeny', $esemeny)
+        ->with('jelentkezesek', $jelentkezesek)
+        ->with('szervezo',$szervezo)
+        ->with('jelentkezettE', $jelentkezettE);
     }
     
     public function apply(Request $request) {
