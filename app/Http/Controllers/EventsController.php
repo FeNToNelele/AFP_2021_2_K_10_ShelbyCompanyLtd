@@ -62,4 +62,10 @@ class EventsController extends Controller
         //var_dump($esemenyek);
         return view('events.events')->with('esemenyek', $esemenyek);
     }
+    
+    public function abandonEvent(Request $request) {
+        DB::table('jelentkezes')
+        ->where('esemenyId', $request->input('esemenyId'))->where('userId', Auth::user()['id'])->delete();
+        return redirect('home');
+    }
 }
