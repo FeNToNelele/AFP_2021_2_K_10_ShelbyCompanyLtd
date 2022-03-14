@@ -21,5 +21,7 @@ Auth::routes();
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 Route::get('/myProfile', [App\Http\Controllers\UserController::class, 'myProfile'])->name('myProfile');
 Route::post('/apply', [App\Http\Controllers\EventsController::class, 'apply'])->name('apply');
+Route::get('/appliedEvents', [App\Http\Controllers\EventsController::class, 'appliedEvents'])->name('appliedEvents');
+
 Route::get('/events', [EventsController::class, 'listAllEvents']);
 Route::get('/events/{id}', [EventsController::class, 'listAnEvent']);
