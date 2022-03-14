@@ -16,7 +16,6 @@ class EventsController extends Controller
     }
 
     public function listAnEvent() {
-        public function listAnEvent($id) {
         $esemeny = DB::table('esemeny')
         ->select('id','megnevezes','kapacitas','leiras','kezdet','veg','helyszin','dolgozoid')
         ->where('id',$id)
@@ -29,5 +28,21 @@ class EventsController extends Controller
         ->where('id',$esemeny->dolgozoid)->first();
         return view('events.event')->with('esemeny', $esemeny)->with('jelentkezesek', $jelentkezesek)->with('szervezo',$szervezo);
     }
+    
+    public function apply(Request $request) {
+        //1 eseményre 1 felhasználó csak 1x tudjon jelentkezni...
+        $jelentkezesekSzama = DB::table('jelentkezes')
+        ->where([
+            ['userId', '=', $request->input('userId')],
+            ['esemenyId', '=', $request->input('esemenyId')]
+        ])
+        ->count('jelentkezesId');
+
+        if($jelentkezesekSzama <= 0)
+        DB::table('jelentkezes')->insert([
+            'esemenyId' => $request->input('esemenyId'),
+            'userId' => $request->input('userId')
+        ]);
+        return redirect('home');
     }
 }
