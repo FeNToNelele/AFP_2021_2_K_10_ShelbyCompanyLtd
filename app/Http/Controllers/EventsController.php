@@ -75,7 +75,7 @@ class EventsController extends Controller
         ->select('id','megnevezes','kapacitas','leiras','kezdet','veg','helyszin','dolgozoid')
         ->whereIn('id',$ArrayOfId)->get();
         //var_dump($esemenyek);
-        return view('events.events')->with('esemenyek', $esemenyek);
+        return view('events.appliedEvents')->with('esemenyek', $esemenyek);
     }
     
     public function abandonEvent(Request $request) {
