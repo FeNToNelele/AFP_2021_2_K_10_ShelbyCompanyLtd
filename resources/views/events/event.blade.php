@@ -26,12 +26,23 @@
         <p class="mb-3 lg:text-3xl text-center">
             <i>Jelentkezhet még: X fő</i>
         </p>
-        <form action="" method="POST">
-            
+        @if(!$jelentkezettE)
+        <form action="{{ route('apply') }}" method="POST">
+            @csrf
+            <input type="hidden" name="esemenyId" value="{{ $esemeny->id }}">
             <button type="submit" class="flex justify-center items-center h-screen rounded-lg w-full text-3xl py-2 px-3 my-5 text-sm font-medium text-center text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
                 Jelentkezek
             </button>
         </form>
+        @else
+        <form action="/abandon" method="post">
+            @csrf
+            {{ method_field('delete') }}
+            <input type="hidden" value="{{ $esemeny->id }}" name="esemenyId">
+            <button class="flex justify-center items-center h-screen rounded-lg w-full text-3xl py-2 px-3 my-5 text-sm font-medium text-center text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800" type="submit">Jelentkezés visszavonása</button>
+        </form>
+        
+        @endif
     </div>
 </div>
 
