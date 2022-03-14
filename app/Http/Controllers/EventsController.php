@@ -45,4 +45,21 @@ class EventsController extends Controller
         ]);
         return redirect('home');
     }
+    
+    public function appliedEvents() {
+        //Még nem lezajlott események kilistázása
+        $userId = Auth::user()['id'];
+        $esemenyekId = DB::select('SELECT esemenyId FROM jelentkezes WHERE userId='.Auth::user()['id']);
+
+        $ArrayOfId = [];
+        for($i = 0; $i < count($esemenyekId); $i++)
+        {
+            $ArrayOfId[$i] = $esemenyekId[$i]->esemenyId;
+        }
+        $esemenyek = DB::table('esemeny')
+        ->select('id','megnevezes','kapacitas','leiras','kezdet','veg','helyszin','dolgozoid')
+        ->whereIn('id',$ArrayOfId)->get();
+        //var_dump($esemenyek);
+        return view('events.events')->with('esemenyek', $esemenyek);
+    }
 }
