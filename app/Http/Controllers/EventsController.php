@@ -53,7 +53,7 @@ class EventsController extends Controller
         //1 eseményre 1 felhasználó csak 1x tudjon jelentkezni...
         $jelentkezesekSzama = DB::table('jelentkezes')
         ->where([
-            ['userId', '=', $request->input('userId')],
+            ['userId', '=', Auth::user()['id'] ],
             ['esemenyId', '=', $request->input('esemenyId')]
         ])
         ->count('jelentkezesId');
@@ -61,7 +61,7 @@ class EventsController extends Controller
         if($jelentkezesekSzama <= 0)
         DB::table('jelentkezes')->insert([
             'esemenyId' => $request->input('esemenyId'),
-            'userId' => $request->input('userId')
+            'userId' => Auth::user()['id']  
         ]);
         return redirect('home');
     }
