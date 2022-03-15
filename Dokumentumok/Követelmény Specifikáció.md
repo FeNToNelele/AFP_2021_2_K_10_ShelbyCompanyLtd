@@ -62,4 +62,15 @@ K06 Az eseményhez QR-kód generálása.
 
 K07 A QR-kód kinyomtathatósága.
 
+## 7. Fogalomtár 
+
+Design - Stílus, forma, kinézet
+
+Intuitív - Magától értetődő
+
+Autentikáció - Hitelesítés. (A projekt esetében: Rendelkezni kell felhasználói fiókkal az oldal használatához.)
+
+QR-kód: Angolul quick response code. Gyakorlatilag egy kétdimenziós vonalkód, amely a telefon kamerájával leolvasható. A projekt esetében felgyorsítja az adminisztrálást.
+
+Exportál: Adatok mentése külön fájlba. Itt: egy eseményhez tartozó adatok kinyerése az adatbázisból, azok rendezett megjelenése például egy Excel táblázatban.
 
