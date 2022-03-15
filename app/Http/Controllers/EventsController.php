@@ -3,7 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-
+use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Auth;
 class EventsController extends Controller
 {
     public function listAllEvents() {
@@ -17,6 +18,7 @@ class EventsController extends Controller
 
     public function listAnEvent($id) {
         //1 eseményre 1 felhasználó csak 1x tudjon jelentkezni...
+        $jelentkezettE = true;
         if(Auth::check())
         {
             $jelentkezesekSzama = DB::table('jelentkezes')
@@ -25,7 +27,7 @@ class EventsController extends Controller
                 ['esemenyId', '=', $id]
             ])
             ->count('jelentkezesId');
-            $jelentkezettE = true;
+            
             if($jelentkezesekSzama <= 0)
                 $jelentkezettE = false;
         }
