@@ -45,4 +45,21 @@ Megrendelőnk szeretné a papíralapú regisztrációt elektronikussá átalakí
    A megoldás csak autentikációval vehető igénybe.
    
    Az eseményekhez tartozó regisztrációs nyilvántartás kinyomtatható legyen.
+   
+   
+ ## 6. Követelménylista
+K01 Könnyen átlátható felület.
+
+K02 Eszközfüggetlen design.
+
+K03 A megoldás esetleg nevezés adminisztrálására is legyen alkalmas.
+
+K04 Események hozzáadása.
+
+k05 Eseményhez tartozó nyilvántartás kiexportálása.
+
+K06 Az eseményhez QR-kód generálása.
+
+K07 A QR-kód kinyomtathatósága.
+
 
