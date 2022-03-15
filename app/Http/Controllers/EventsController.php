@@ -3,8 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\DB;
-use Illuminate\Support\Facades\Auth;
+
 class EventsController extends Controller
 {
     public function listAllEvents() {
@@ -18,15 +17,18 @@ class EventsController extends Controller
 
     public function listAnEvent($id) {
         //1 eseményre 1 felhasználó csak 1x tudjon jelentkezni...
-        $jelentkezesekSzama = DB::table('jelentkezes')
-        ->where([
-            ['userId', '=', Auth::user()['id']],
-            ['esemenyId', '=', $id]
-        ])
-        ->count('jelentkezesId');
-        $jelentkezettE = true;
-        if($jelentkezesekSzama <= 0)
-            $jelentkezettE = false;
+        if(Auth::check())
+        {
+            $jelentkezesekSzama = DB::table('jelentkezes')
+            ->where([
+                ['userId', '=', Auth::user()['id']],
+                ['esemenyId', '=', $id]
+            ])
+            ->count('jelentkezesId');
+            $jelentkezettE = true;
+            if($jelentkezesekSzama <= 0)
+                $jelentkezettE = false;
+        }
 
         $esemeny = DB::table('esemeny')
         ->select('id','megnevezes','kapacitas','leiras','kezdet','veg','helyszin','dolgozoid')
@@ -48,14 +50,16 @@ class EventsController extends Controller
     public function apply(Request $request) {
         //1 eseményre 1 felhasználó csak 1x tudjon jelentkezni...
         $jelentkezesekSzama = DB::table('jelentkezes')
-        ->where('esemenyId', '=', $request->input('esemenyId'))
-        ->where('userId', '=', Auth::user()['id'])
+        ->where([
+            ['userId', '=', $request->input('userId')],
+            ['esemenyId', '=', $request->input('esemenyId')]
+        ])
         ->count('jelentkezesId');
 
         if($jelentkezesekSzama <= 0)
         DB::table('jelentkezes')->insert([
             'esemenyId' => $request->input('esemenyId'),
-            'userId' => Auth::user()['id']
+            'userId' => $request->input('userId')
         ]);
         return redirect('home');
     }
