@@ -38,3 +38,11 @@ Megrendelőnk szeretné a papíralapú regisztrációt elektronikussá átalakí
  - Eseményre megjelenés igazolása:
  
      - a QR-kód leolvasásával a felhasználó tudja igazolni, hogy az eseményen megjelent
+ 
+ ## 5. A rendszerre vonatkozó szabályok
+   A felület legyen intuitív, letisztult design.
+   
+   A megoldás csak autentikációval vehető igénybe.
+   
+   Az eseményekhez tartozó regisztrációs nyilvántartás kinyomtatható legyen.
+
