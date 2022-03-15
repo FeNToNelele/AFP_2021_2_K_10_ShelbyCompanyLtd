@@ -18,7 +18,7 @@ class EventsController extends Controller
 
     public function listAnEvent($id) {
         //1 eseményre 1 felhasználó csak 1x tudjon jelentkezni...
-        $jelentkezettE = true;
+        $jelentkezettE = false;
         if(Auth::check())
         {
             $jelentkezesekSzama = DB::table('jelentkezes')
@@ -28,8 +28,8 @@ class EventsController extends Controller
             ])
             ->count('jelentkezesId');
             
-            if($jelentkezesekSzama <= 0)
-                $jelentkezettE = false;
+            if($jelentkezesekSzama > 0)
+                $jelentkezettE = true;
         }
 
         $esemeny = DB::table('esemeny')
