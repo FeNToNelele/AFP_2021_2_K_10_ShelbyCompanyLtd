@@ -24,5 +24,5 @@ Route::post('/apply', [App\Http\Controllers\EventsController::class, 'apply'])->
 Route::get('/appliedEvents', [App\Http\Controllers\EventsController::class, 'appliedEvents'])->name('appliedEvents');
 Route::delete('/abandon', [App\Http\Controllers\EventsController::class, 'abandonEvent']);
 
-Route::get('/events', [EventsController::class, 'listAllEvents']);
+Route::get('/events', [EventsController::class, 'listAllEvents'])->name('events');
 Route::get('/events/{id}', [EventsController::class, 'listAnEvent']);

@@ -38,3 +38,39 @@ Megrendelőnk szeretné a papíralapú regisztrációt elektronikussá átalakí
  - Eseményre megjelenés igazolása:
  
      - a QR-kód leolvasásával a felhasználó tudja igazolni, hogy az eseményen megjelent
+ 
+ ## 5. A rendszerre vonatkozó szabályok
+   A felület legyen intuitív, letisztult design.
+   
+   A megoldás csak autentikációval vehető igénybe.
+   
+   Az eseményekhez tartozó regisztrációs nyilvántartás kinyomtatható legyen.
+   
+   
+ ## 6. Követelménylista
+K01 Könnyen átlátható felület.
+
+K02 Eszközfüggetlen design.
+
+K03 A megoldás esetleg nevezés adminisztrálására is legyen alkalmas.
+
+K04 Események hozzáadása.
+
+k05 Eseményhez tartozó nyilvántartás kiexportálása.
+
+K06 Az eseményhez QR-kód generálása.
+
+K07 A QR-kód kinyomtathatósága.
+
+## 7. Fogalomtár 
+
+Design - Stílus, forma, kinézet
+
+Intuitív - Magától értetődő
+
+Autentikáció - Hitelesítés. (A projekt esetében: Rendelkezni kell felhasználói fiókkal az oldal használatához.)
+
+QR-kód: Angolul quick response code. Gyakorlatilag egy kétdimenziós vonalkód, amely a telefon kamerájával leolvasható. A projekt esetében felgyorsítja az adminisztrálást.
+
+Exportál: Adatok mentése külön fájlba. Itt: egy eseményhez tartozó adatok kinyerése az adatbázisból, azok rendezett megjelenése például egy Excel táblázatban.
+
