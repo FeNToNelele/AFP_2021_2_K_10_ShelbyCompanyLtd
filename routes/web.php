@@ -26,3 +26,4 @@ Route::delete('/abandon', [App\Http\Controllers\EventsController::class, 'abando
 
 Route::get('/events', [EventsController::class, 'listAllEvents'])->name('events');
 Route::get('/events/{id}', [EventsController::class, 'listAnEvent']);
+Route::get('/createEvent', [EventsController::class, 'createEvent'])->name('createEvent');

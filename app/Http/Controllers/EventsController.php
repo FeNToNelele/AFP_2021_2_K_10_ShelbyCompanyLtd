@@ -49,6 +49,10 @@ class EventsController extends Controller
         ->with('jelentkezettE', $jelentkezettE);
     }
     
+    public function createEvent() {
+        return view('events.createEvent');
+    }
+
     public function apply(Request $request) {
         //1 eseményre 1 felhasználó csak 1x tudjon jelentkezni...
         $jelentkezesekSzama = DB::table('jelentkezes')
