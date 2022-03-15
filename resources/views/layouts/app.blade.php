@@ -23,7 +23,7 @@
     <div id="app">
         <nav class="bg-white px-2 sm:px-4 py-2.5 dark:bg-blue-900 shadow-xl">
             <div class="container flex flex-wrap justify-between items-center mx-auto">
-              <a href="#" class="flex"> <!--TODO: Redirects to main page-->
+              <a href="{{ route('index') }}" class="flex">
                 <img src="{{ asset('logo.png') }}" alt="" class="w-16 lg:w-32">
                   <span class="self-center text-lg whitespace-nowrap dark:text-white pl-5">EKKESport</span>
               </a>
@@ -47,17 +47,16 @@
                                 </li>
                             @endif
                         @else
+                            <a id="navbarDropdown" class="nav-link dropdown-toggle font-light text-gray-100" href="{{ route('myProfile') }}" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                                {{ Auth::user()->name }}
+                            </a>
                             <li>
-                                <a href="#" class="px-3 py-2 text-gray-100 hover:text-gray-50">Események</a>
+                                <a href="{{ route('events') }}" class="px-3 py-2 text-gray-100 hover:text-gray-50">Események</a>
                             </li>
                             <li>
-                                <a href="#" class="px-3 py-2 text-gray-100 hover:text-gray-50">Eseményeim</a>
+                                <a href="{{ route('appliedEvents') }}" class="px-3 py-2 text-gray-100 hover:text-gray-50">Eseményeim</a>
                             </li>
-                            <li class="nav-item dropdown">
-                                <a id="navbarDropdown" class="nav-link dropdown-toggle" href="{{ route('myProfile') }}" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                                    {{ Auth::user()->name }}
-                                </a>
-
+                            <li class="nav-item dropdown text-gray-100">
                                 <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
                                     <a class="dropdown-item" href="{{ route('logout') }}"
                                        onclick="event.preventDefault();
