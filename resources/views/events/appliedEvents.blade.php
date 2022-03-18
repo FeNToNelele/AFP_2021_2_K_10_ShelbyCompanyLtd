@@ -1,15 +1,20 @@
 
 @extends('layouts.app')
 @yield('navbar')
-@section('title', 'Események')
+@section('title', 'Eseményeim')
 
 @section('content')
 <script type="text/javascript" src="{{ asset('js/events/extendPanel.js') }}"></script>
 
-    <div class="bg-white rounded-xl shadow-lg mx-5 lg:mx-52 py-10 mt-10 mb-10">
-        <p class="font-light text-center text-3xl lg:text-5xl ">Amikre jelentkeztem</p>
-    </div>
-    
+<div class="bg-white rounded-xl shadow-lg mx-5 lg:mx-52 py-10 mt-10 mb-10">
+    <p class="font-light text-center text-3xl lg:text-5xl ">Eseményeim:</p>
+</div>
+<div class="flex h-screen">
+    <a href="{{ route('createEvent') }}" class="m-auto bg-green-600 rounded-xl shadow-lg font-iight text-2xl px-5 py-2.5 text-gray-100 transition text-center hover:bg-green-500 hover:text-gray-100">
+        Új esemény hozzáadása
+    </a>
+</div>
+
     <div class="flex justify-center items-center h-screen">
         <div class="grid grid-cols-1 lg:grid-cols-3 gap-4 justify-center">
             <!--Programok ciklikusan-->
@@ -32,5 +37,4 @@
             @endforeach
         </div>
     </div>
-
 @endsection
