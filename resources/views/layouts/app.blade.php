@@ -11,6 +11,8 @@
 
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}" defer></script>
+    <script src="../path/to/flowbite/dist/flowbite.bundle.js"></script>
+    <script src="{{ asset('js/navbarToggle.js') }}"></script>
 
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
@@ -21,14 +23,13 @@
 </head>
 <header>
     <div id="app">
-        <nav class="bg-white px-2 sm:px-4 py-2.5 dark:bg-blue-900 shadow-xl">
+        <nav class="px-2 py-2.5 bg-blue-900 shadow-xl">
             <div class="container flex flex-wrap justify-between items-center mx-auto">
               <a href="{{ route('index') }}" class="flex">
                 <img src="{{ asset('logo.png') }}" alt="" class="w-16 lg:w-32">
-                  <span class="self-center text-lg whitespace-nowrap dark:text-white pl-5">EKKESport</span>
+                  <span class="self-center text-lg whitespace-nowrap text-white pl-5">EKKESport</span>
               </a>
-              <button data-collapse-toggle="mobile-menu" type="button" class="inline-flex items-center p-2 ml-3 text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600" aria-controls="mobile-menu-2" aria-expanded="false">
-                <span class="sr-only">Open main menu</span>
+              <button type="button" class="inline-flex items-center p-2 ml-3 text-sm  rounded-lg md:hidden focus:outline-none focus:ring-2 text-gray-400 hover:bg-gray-700 focus:ring-gray-600" onclick="toggleHamburger()">
                 <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z" clip-rule="evenodd"></path></svg>
                 <svg class="hidden w-6 h-6" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
               </button>
@@ -47,7 +48,7 @@
                                 </li>
                             @endif
                         @else
-                            <a id="navbarDropdown" class="nav-link dropdown-toggle font-light text-gray-100" href="{{ route('myProfile') }}" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                            <a class="font-light text-gray-100" href="{{ route('myProfile') }}">
                                 {{ Auth::user()->name }}
                             </a>
                             <li>
@@ -56,9 +57,9 @@
                             <li>
                                 <a href="{{ route('appliedEvents') }}" class="px-3 py-2 text-gray-100 hover:text-gray-50">Eseményeim</a>
                             </li>
-                            <li class="nav-item dropdown text-gray-100">
-                                <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-                                    <a class="dropdown-item" href="{{ route('logout') }}"
+                            <li class="text-gray-100">
+                                <div>
+                                    <a href="{{ route('logout') }}"
                                        onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
                                         {{ __('Logout') }}
@@ -76,7 +77,7 @@
         </nav>
     </div>
 </header>
-<body class="bg-gradient-to-b bg-maintain min-h-screen antialiased leading-none from-gray-100 to-gray-300 pb-10">
+<body class="h-full min-h-screen bg-gradient-to-b from-gray-100 to-gray-300 pb-10">
     @yield('content')
 </body>
 </html>
