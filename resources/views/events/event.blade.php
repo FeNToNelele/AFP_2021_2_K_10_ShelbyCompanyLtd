@@ -2,16 +2,6 @@
 @section('title', 'Részletek')
 
 @section('content')
-@guest
-    <div class="bg-white rounded-xl shadow-lg mx-5 lg:mx-52 py-10 mt-10 mb-10">
-        <p class="font-light text-center text-3xl lg:text-5xl ">Jelentkezzen be az oldal megtekintéséhez!</p>
-    </div>
-    @if (Route::has('login'))
-        <div class="w-full text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
-            <a href="{{ route('login') }}">Bejelentkezés</a>
-        </div>
-    @endif
-@else
 <div class="bg-transparent my-5 rounded-lg shadow-sm lg:mx-52">
     <p class="font-light text-3xl lg:text-5xl text-center pb-5">{{ $esemeny->megnevezes }}</p>
 </div>
@@ -60,5 +50,4 @@
         @endif
     </div>
 </div>
-@endguest
 @endsection
