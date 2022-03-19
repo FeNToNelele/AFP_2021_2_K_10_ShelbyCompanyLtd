@@ -25,16 +25,16 @@
                       class="
                         form-control block w-full px-3 py-1.5 text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded-xl
                         transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none"
-                      id="leiras" rows="5" placeholder="Tartson velünk az Eged hegyre, ahol megvizsgáljuk közösen a hegy élővilágát! Szeles környékről van szó, így mindenképp hozzon magával sapkát!"
+                      id="leiras" rows="5" name="leiras" placeholder="Tartson velünk az Eged hegyre, ahol megvizsgáljuk közösen a hegy élővilágát! Szeles környékről van szó, így mindenképp hozzon magával sapkát!"
                     ></textarea>
                 </div>
                 <div class="mt-3">
                     <label for="kezdet" class="block mb-2 text-sm font-medium text-gray-900">Kezdés időpontja:</label>
-                    <input id="kezdet" type='datetime-local' min='setNow()' class="form-control bg-gray-50 border border-gray-300 text-black text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full" required></input>
+                    <input id="kezdet" name="kezdet" type='datetime-local' min="{{ date('Y-m-d'); }}T{{ date('h:i'); }}" class="form-control bg-gray-50 border border-gray-300 text-black text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full" required>
                 </div>
                 <div class="mt-3">
                     <label for="veg" class="block mb-2 text-sm font-medium text-gray-900">Véget ér:</label>
-                    <input id="veg" type='datetime-local' min='setNow()' class="form-control bg-gray-50 border border-gray-300 text-black text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full" required></input>
+                    <input id="veg" name="veg" type='datetime-local' min="{{ date('Y-m-d'); }}T{{ date('h:i'); }}" class="form-control bg-gray-50 border border-gray-300 text-black text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full" required>
                 </div>
                 <div class="mt-3">
                     <label for="helyszin" class="block mb-2 text-sm font-medium text-gray-900">Gyülekezés helyszíne:</label>

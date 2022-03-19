@@ -27,3 +27,5 @@ Route::delete('/abandon', [App\Http\Controllers\EventsController::class, 'abando
 Route::get('/events', [EventsController::class, 'listAllEvents'])->name('events');
 Route::get('/events/{id}', [EventsController::class, 'listAnEvent'])->middleware('auth');
 Route::get('/createEvent', [EventsController::class, 'createEvent'])->name('createEvent')->middleware('auth');
+Route::post('/registerEvent', [EventsController::class, 'registerEvent'])->name('register')->middleware('auth');
+
