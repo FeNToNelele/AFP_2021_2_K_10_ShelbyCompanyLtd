@@ -5,7 +5,7 @@
 <script type="text/javascript" src="{{ asset('js/events/getCurrentDate.js') }}"></script>
 <div class="flex h-screen">
     <div class="m-auto">
-        <div class="mt-10 p-10 w-96 bg-gray-100 rounded-lg border border-gray-200 shadow-md sm:p-6 lg:p-8">
+        <div class="p-10 bg-gray-100 rounded-lg border border-gray-200 shadow-md sm:p-6 lg:p-8">
             <form class="space-y-6" method="POST" action="{{ route('register') }}">
                 @csrf
                 <h3 class="text-2xl text-center text-gray-900">Új esemény</h3>
@@ -23,8 +23,8 @@
                     </label>
                     <textarea
                       class="
-                        form-control block w-full px-3 py-1.5 text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded-xl
-                        transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none"
+                        form-control inline w-48 px-3 py-1.5 text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded-xl
+                        transition ease-in-out focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none"
                       id="leiras" rows="5" placeholder="Tartson velünk az Eged hegyre, ahol megvizsgáljuk közösen a hegy élővilágát! Szeles környékről van szó, így mindenképp hozzon magával sapkát!"
                     ></textarea>
                 </div>
