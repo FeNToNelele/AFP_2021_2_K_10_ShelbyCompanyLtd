@@ -54,16 +54,20 @@ class EventsController extends Controller
     }
 
     public function registerEvent(Request $request) {
-        DB::table('esemeny')->insert([
-            'megnevezes' => $request->input('megnevezes'),
-            'kapacitas' => $request->input('kapacitas'),
-            'leiras' => $request->input('leiras'),
-            'kezdet' => date('Y-m-d h:i:s', strtotime($request->input('kezdet'))),
-            'veg' => date('Y-m-d h:i:s', strtotime($request->input('veg'))),
-            'helyszin' => $request->input('helyszin'),
-            'dolgozoId' => Auth::user()['id']  
-        ]);
-        echo "Sikeres esemény felvitel!";
+        if(Auth::user()['accountType'] == 'teacher') 
+        {
+            DB::table('esemeny')->insert([
+                'megnevezes' => $request->input('megnevezes'),
+                'kapacitas' => $request->input('kapacitas'),
+                'leiras' => $request->input('leiras'),
+                'kezdet' => date('Y-m-d h:i:s', strtotime($request->input('kezdet'))),
+                'veg' => date('Y-m-d h:i:s', strtotime($request->input('veg'))),
+                'helyszin' => $request->input('helyszin'),
+                'dolgozoId' => Auth::user()['id']  
+            ]);
+            echo "Sikeres esemény felvitel!";
+        }
+        else echo "Nincs hozzá jogosultsága!";
         return view('home');
     }
 
