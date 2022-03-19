@@ -30,7 +30,7 @@
                 </div>
                 <div class="mt-3">
                     <label for="kezdet" class="block mb-2 text-sm font-medium text-gray-900">Kezdés időpontja:</label>
-                    <input id="kezdet" name="kezdet" type='datetime-local' min="{{ date('Y-m-d'); }}T{{ date('h:i'); }}" class="form-control bg-gray-50 border border-gray-300 text-black text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full" required>
+                    <input id="kezdet" name="kezdet" type='datetime-local' min="{{ date('Y-m-d'); }}T{{ date('h:i'); }}" onChange="setMin()" class="form-control bg-gray-50 border border-gray-300 text-black text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full" required>
                 </div>
                 <div class="mt-3">
                     <label for="veg" class="block mb-2 text-sm font-medium text-gray-900">Véget ér:</label>
@@ -46,4 +46,12 @@
     </div>
 
 </div>
+
+<script>
+    function setMin() {
+        document.getElementById('veg').min = document.getElementById('kezdet').value;
+        console.log("siker");
+    }
+
+</script>
 @endsection
