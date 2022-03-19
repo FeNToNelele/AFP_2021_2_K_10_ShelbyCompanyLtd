@@ -53,6 +53,10 @@ class EventsController extends Controller
         return view('events.createEvent');
     }
 
+    public function manageEvents() {
+        return view('events.manageEvents');
+    }
+
     public function apply(Request $request) {
         //1 eseményre 1 felhasználó csak 1x tudjon jelentkezni...
         $jelentkezesekSzama = DB::table('jelentkezes')
@@ -67,7 +71,7 @@ class EventsController extends Controller
             'esemenyId' => $request->input('esemenyId'),
             'userId' => Auth::user()['id']  
         ]);
-        return redirect('home');
+        return redirect('home')->with('message', 'Sikeresen jelentkezett!');
     }
     
     public function appliedEvents() {
@@ -90,6 +94,6 @@ class EventsController extends Controller
     public function abandonEvent(Request $request) {
         DB::table('jelentkezes')
         ->where('esemenyId', $request->input('esemenyId'))->where('userId', Auth::user()['id'])->delete();
-        return redirect('home');
+        return redirect('home')->with('message', 'Sikeresen lejelentkezett!');
     }
 }
