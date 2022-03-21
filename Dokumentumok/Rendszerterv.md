@@ -1,4 +1,4 @@
-## 2 Projektterv
+## 2. Projektterv
 Projektmunkások, felelősségek:
 
 Adatbázis tervezés és annak létrehozása: Kecse Károly, Nagy Péter Axel
@@ -13,9 +13,14 @@ Tesztelés: Kecse Károly, Nagy Péter Axel, Sárosi Gábor
 
 
 
+## 9. Implementációs terv
+A felület HTML, JS, és PHP nyelven készül. Az oldalakat és azok vezérlését végző fájlokat a framework által karbantartott fájl rendszerezés szerint hoztuk létre.
+A szabványos fájlkezelés végett átláthatóbb és egyszerűbb lesz a későbbi fejlesztési folyamatok során megérteni a rendszer felépítését.
+
+A frontend elkészítése során CSS, BootStrap illetve Tailwind CSS használatára került sor, ezek felgyorsították a felület szerkesztésének folyamatát.
 
 
-## 12 Karbantartási terv
+## 12. Karbantartási terv
 “Az alkalmazás folyamatos üzemeltetése és karbantartása, mely
 
 magában foglalja a programhibák elhárítását, a belső igények változása miatti
