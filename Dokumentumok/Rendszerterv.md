@@ -1,3 +1,20 @@
+## 2 Projektterv
+Projektmunkások, felelősségek:
+
+Adatbázis tervezés és annak létrehozása: Kecse Károly, Nagy Péter Axel
+
+Frontend: Kecse Károly, Nagy Péter Axel, Sárosi Gábor
+
+Frontend design: Sárosi Gábor
+
+Backend: Kecs Károly, Nagy Péter Axel,  Sárosi Gábor
+
+Tesztelés: Kecse Károly, Nagy Péter Axel, Sárosi Gábor
+
+
+
+
+
 ## 12 Karbantartási terv
 “Az alkalmazás folyamatos üzemeltetése és karbantartása, mely
 
