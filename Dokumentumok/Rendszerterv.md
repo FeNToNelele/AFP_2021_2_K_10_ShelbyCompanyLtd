@@ -20,6 +20,13 @@ A szabványos fájlkezelés végett átláthatóbb és egyszerűbb lesz a késő
 A frontend elkészítése során CSS, BootStrap illetve Tailwind CSS használatára került sor, ezek felgyorsították a felület szerkesztésének folyamatát.
 
 
+## 10. Tesztterv
+A teszteléseket egy külön jegyzőkönyvben fogjuk majd vezetni és folyamatosan jegyzetelni a fejlesztés során. Több tesztelés fog történni a fejlesztés alatt (Alfa, Béta és végleges teszt), 
+
+Minden teszt 1 hetet fog igénybe venni és minden funkció átvizsgálásra fog kerülni. A fejlesztő csapat mindegyik tagja külön-külön fogja tesztelni a weboldalt.
+
+A tesztjegyzőkönyv megtalálható a többi dokumentáció között.
+
 ## 12. Karbantartási terv
 “Az alkalmazás folyamatos üzemeltetése és karbantartása, mely
 
