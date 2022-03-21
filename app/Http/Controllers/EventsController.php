@@ -110,4 +110,59 @@ class EventsController extends Controller
         ->where('esemenyId', $request->input('esemenyId'))->where('userId', Auth::user()['id'])->delete();
         return redirect('home')->with('message', 'Sikeresen lejelentkezett!');
     }
+
+    public function manageEvents() {
+         //1 eseményre 1 felhasználó csak 1x tudjon jelentkezni...
+        if(Auth::check())
+        {
+        $esemenyek = DB::table('esemeny')
+         ->select('id','megnevezes','kapacitas','leiras','kezdet','veg','helyszin','dolgozoid')
+         ->where('dolgozoId', Auth::user()['id'])
+         ->get();
+         return view('events.manageEvents')
+         ->with('esemenyek', $esemenyek);
+         }
+ 
+         
+    }
+
+    public function editEventForm(Request $request) {
+        if(Auth::user()['accountType'] == 'teacher') 
+        {
+            $esemeny = DB::table('esemeny')
+            ->select('id','megnevezes','kapacitas','leiras','kezdet','veg','helyszin','dolgozoid')
+            ->where('id',$request->input('esemenyId'))
+            ->first();
+        }
+        else echo "Nincs hozzá jogosultsága!";
+        return view('events.editAnEvent')->with('esemeny', $esemeny);
+        
+    }
+
+    public function editEvent(Request $request) {
+        if(Auth::user()['accountType'] == 'teacher') 
+        {
+             DB::table('esemeny')
+              ->where('id', $request->input('esemenyId'))
+              ->update([
+                'megnevezes' => $request->input('megnevezes'),
+                'kapacitas' => $request->input('kapacitas'),
+                'leiras' => $request->input('leiras'),
+                'kezdet' => date('Y-m-d h:i:s', strtotime($request->input('kezdet'))),
+                'veg' => date('Y-m-d h:i:s', strtotime($request->input('veg'))),
+                'helyszin' => $request->input('helyszin') ]);
+        }
+        else echo "Nincs hozzá jogosultsága!";
+        return redirect('/manageEvents');
+        
+    }
+    public function deleteEvent(Request $request) {
+        if(Auth::user()['accountType'] == 'teacher') 
+        {
+            DB::table('esemeny')
+            ->where('id', $request->input('esemenyId'))->delete();
+            return redirect('/manageEvents');
+        }
+        
+    }
 }

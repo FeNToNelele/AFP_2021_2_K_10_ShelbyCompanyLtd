@@ -17,12 +17,18 @@
             <p class="mb-3 font-normal text-gray-500">{{ $esemeny->leiras }}</p>
             <p class="mb-3 font-medium text-gray-500">Kezdet: {{ $esemeny->kezdet }}</p>
             <p class="mb-3 font-medium text-gray-500">Vége: {{ $esemeny->veg }}</p>
-            <a href="{{ route('editEvent') }}" class="m-auto bg-yellow-600 rounded-xl shadow-lg font-iight text-2xl px-5 py-2.5 text-gray-100 transition text-center hover:bg-yellow-500 hover:text-gray-100">
-                Módosítás
-            </a>
-            <a href="{{ route('deleteEvent') }}" class="m-auto bg-red-600 rounded-xl shadow-lg font-iight text-2xl px-5 py-2.5 text-gray-100 transition text-center hover:bg-red-500 hover:text-gray-100">
-                Törlés
-            </a>
+            <form method="POST" action="{{ route('editEventForm') }}" >
+                @csrf
+                <input type="hidden" value="{{ $esemeny->id }}" name="esemenyId">
+                <input type="submit" value="Módosítás" class="m-auto bg-red-600 rounded-xl shadow-lg font-iight text-2xl px-5 py-2.5 text-gray-100 transition text-center hover:bg-red-500 hover:text-gray-100">
+            </form>
+            <form action = "{{ route('deleteEvent') }}" method="POST">
+                @csrf
+                {{ method_field('delete') }}
+                <input type="hidden" name="esemenyId" value="{{ $esemeny->id }}">
+                <input type="submit" value="Törlés"  class="m-auto bg-red-600 rounded-xl shadow-lg font-iight text-2xl px-5 py-2.5 text-gray-100 transition text-center hover:bg-red-500 hover:text-gray-100"> 
+            </form>
+        </div>
         @endforeach
     </div>
 </div>
