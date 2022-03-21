@@ -22,6 +22,9 @@ Megrendelőnk eddig papír alapon vezette a különféle sportrendezvényekre va
 ## 4. Jelenlegi üzleti folyamatok modellje.
 Egy sporteseményen, vagy bármilyen egyetemi rendezvényen való részvételünket jelenléti ív kitöltésével tudjuk igazolni. Ez nem csak, hogy korszerűtlen, de felesleges időt vesz igénybe azoktól, akiknek az aláírásokkal kell bajlódni, valamint akik az adminisztrációs feladatokat végzik a rendezvénnyel kapcsolatban. Megoldásunk a környezetre is kevésbé káros hatást gyakorolna, hiszen a több példányos jelenléti ívek helyett csak egy QR-kódot kellene kinyomtatni, amivel a nyomtatás és papír árát is meg lehetne spórolni.
 
+## 5. Igényelt üzleti folyamatok modellje.
+Egy olyan rendszert szeretnénk létrehozni, amivel az egyetem dolgozói könnyen tudnának adminisztrációs feladatokat elvégezni a rendezvényekkel kapcsolatban (létrehozni, módosítani, törölni, hozzá tartozó adatokat lekérni, stb.). Fontosnak tartjuk, hogy egy univerzális megoldást tudjunk biztosítani a felhasználók körében, ezért a reszponzív kialakítású weboldal mellett döntöttünk, amit minden eszközről el lehet érni. Az oldal megjelenése letisztult, mégis igényes design-t kapna, felhasználása egyértelmű lenne az elektronikus világban kevésbé jártas felhasználók számára is. Különböző típusú felhasználói fiók létrehozására adunk esélyt (dolgozó/hallgató/külsős), szabályozva a rendszer funkcióihoz való hozzáféréseket. A meghirdetett eseményekre előzetesen lehet regisztrálni a weboldalon a megadott időintervallumban, majd a helyszínen leolvasott QR-kóddal megerősíteni a megjelenésünket. Később a dolgozóknak lehetőséget biztosítunk, hogy különböző statisztikákat lehessen lekérdezni az egyes eseményekről (érdeklődök hány százaléka jelent meg, kik jelentek meg [név/szak/neptun]).
+
 
 ## 9. Fogalomszótár.
 
