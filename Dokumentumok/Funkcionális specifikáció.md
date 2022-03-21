@@ -35,6 +35,11 @@ rögzítése könnyebb legyen. Ezért készül el a weboldal és a mobil applik�
 
 A felhasználónak lehetősége lesz a weboldalon illetve mobil applikáción megjelent eseményekre jelentkezni.
 
+## 7. Képernyőtervek
+
+![https://i.imgur.com/zi8UEMv.png](https://i.imgur.com/zi8UEMv.png)
+![https://i.imgur.com/lTaxhsD.png](https://i.imgur.com/lTaxhsD.png)
+
 ## 8. Forgatókönyvek
 
 Admin szemszögéből: Bejelentkezés után hozzáférése lesz a teljes weboldalhoz, ezáltal létre tudja hozni az eseményeket amik esedékedek illetve módosítani és törölni is tudja majd azokat ezáltal feltudja majd mérni mennyien vesznek részt az adott eseményen.
