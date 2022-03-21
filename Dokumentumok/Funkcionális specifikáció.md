@@ -19,6 +19,10 @@ Megrendelőnk eddig papír alapon vezette a különféle sportrendezvényekre va
 | UI  | U2  | Reszponzív design | Az oldalnak megfelelő kinézete legyen különböző eszközökön. |
 | UI  | U3  | Igazolás | A felhasználó ha megjelenik egy eseményen, legyen képes igazolni jelenlétét egy QR-kód leolvasásával. |
 
+## 4. Jelenlegi üzleti folyamatok modellje.
+Egy sporteseményen, vagy bármilyen egyetemi rendezvényen való részvételünket jelenléti ív kitöltésével tudjuk igazolni. Ez nem csak, hogy korszerűtlen, de felesleges időt vesz igénybe azoktól, akiknek az aláírásokkal kell bajlódni, valamint akik az adminisztrációs feladatokat végzik a rendezvénnyel kapcsolatban. Megoldásunk a környezetre is kevésbé káros hatást gyakorolna, hiszen a több példányos jelenléti ívek helyett csak egy QR-kódot kellene kinyomtatni, amivel a nyomtatás és papír árát is meg lehetne spórolni.
+
+
 ## 9. Fogalomszótár.
 
 Autentikáció - Hitelesítés. (A projekt esetében: Ne kelljen külön felhasználói fiókot arra létrehozni, hogy kitöltsünk egy kérdőívet.)
