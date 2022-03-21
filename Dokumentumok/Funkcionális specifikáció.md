@@ -1,3 +1,7 @@
+## 1. Áttekintés
+
+Egy olyan webalkalmazást fejlesztünk, aminek segítségével ügyfelünk korszerűbb módon végezheti el eseményeinek nyilvántartását. Célunk, hogy minden  eszközön könnyedén használható legyen a rendszer. A weboldal autentikációs rendszerrel lesz felügyelve.
+
 ## 2. Jelenlegi helyzet
 
 Megrendelőnk eddig papír alapon vezette a különféle sportrendezvényekre való regisztrálást. Ez meglehetősen nehézkes megoldásnak bizonyul, mivel a papír könnyen elveszhet, nem beszélve magáról a regisztrálás nehézségéről. A felhasználóknak személyesen kell regisztrálniuk egy eseményre. A nagyobb felhasználási kör érdekében fontos, hogy minden eszközön használható legyen a felület, ezért egy reszponzív web-es alkalmazás mellett döntöttek, amihez feltétlenül valamilyen PHP alapú framework-höz ragaszkodnak, így a továbbfejlesztés folyamata is egyszerűbb lesz a későbbiekben.
