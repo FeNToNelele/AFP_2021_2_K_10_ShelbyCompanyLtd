@@ -11,7 +11,22 @@ Backend: Kecs Károly, Nagy Péter Axel,  Sárosi Gábor
 
 Tesztelés: Kecse Károly, Nagy Péter Axel, Sárosi Gábor
 
-
+## 4. Követelmények
+ - Funkcionális követelmények
+   - Felhasználó bejelentkezési adatainak tárolása
+   - Felhasználói jogkörök kialakítása
+   - Események adatainak tárolása
+     - Események, azokhoz lehetséges résztvevők
+   - Webes környezeten való stabil működés
+ - Nem funkcionális működés
+   - A bejelentkezés nélküli felhasználók ne férhessenek hozzá az események jelentkezéséhez és azok kezeléséhez
+   - Eseményeken megjelentkezről lekérdezhető az egyes statisztika
+     - ehhez csak az adminisztrációs személy férhet hozzá
+   - A bejelentkezés nélküli felhasználó csak az események részleteihez illetve listázásához fér hozzá
+ - Törvényi előírások, szabályok
+   - A web felület szabványos eszközökkel készüljön, html/php/css
+   - Intuitív, átlátható rendszer
+   - GDPR szabályoknak való megfelelés
 
 ## 9. Implementációs terv
 A felület HTML, JS, és PHP nyelven készül. Az oldalakat és azok vezérlését végző fájlokat a framework által karbantartott fájl rendszerezés szerint hoztuk létre.
