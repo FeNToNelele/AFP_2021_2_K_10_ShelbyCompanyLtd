@@ -28,6 +28,33 @@ Tesztelés: Kecse Károly, Nagy Péter Axel, Sárosi Gábor
    - Intuitív, átlátható rendszer
    - GDPR szabályoknak való megfelelés
 
+## 5. Funkcionális terv
+ - Rendszerszereplők
+    - Admin  
+    - Dolgozó
+    - Hallgató
+    - Vendég
+ - Rendszerhasználati esetek és lefutásaik:
+    - ADMIN:
+        - Rendszer feletti korlátlan hozzáférés
+        - Események létrehozása
+        - Események szerkesztése
+        - Események törlése
+        - Az egyes eseményekre vonatkozó statisztikák megjelenítése
+    - Vendég
+        - Eseményekhez való hozzáférés, jelentkezés hivatkozáson keresztü
+    - Hallgató
+        - Eseményekhez való hozzáférés, jelentkezés hivatkozáson keresztül
+    - Dolgozó
+        - Eseményekhez való hozzáférés, jelentkezés hivatkozáson keresztül
+        - Események létrehozása, módosítása, törlése
+ - Menü-architektúrák:
+    - BEJELENTKEZÉS:
+        - User autentikáció, jelentkezéshez szükséges
+    
+    - Regisztráció
+        - Felhasználók regisztrációws felülete a rendszerbe, így nem kell minden esetben megadni az alapadatokat
+    - Kijelentkezés
 ## 9. Implementációs terv
 A felület HTML, JS, és PHP nyelven készül. Az oldalakat és azok vezérlését végző fájlokat a framework által karbantartott fájl rendszerezés szerint hoztuk létre.
 A szabványos fájlkezelés végett átláthatóbb és egyszerűbb lesz a későbbi fejlesztési folyamatok során megérteni a rendszer felépítését.
