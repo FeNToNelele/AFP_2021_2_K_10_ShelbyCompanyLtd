@@ -163,6 +163,17 @@ class EventsController extends Controller
             ->where('id', $request->input('esemenyId'))->delete();
             return redirect('/manageEvents');
         }
-        
+    }
+
+    public function verify() {
+        /*if(Auth::check()) {
+            DB::table('jelentkezes')
+            ->where('esemenyId', $request->input('esemenyId'))
+            ->where('userId', $request->input('userId'))
+            ->update(['megjelent' => 1])
+        }
+        else return view('home')->with('message', 'Nincs jogosultsága az oldal megtekintéséhez!');*/
+
+        return view('events.verify');
     }
 }
