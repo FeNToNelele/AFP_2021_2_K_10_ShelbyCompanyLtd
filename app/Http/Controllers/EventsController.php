@@ -162,16 +162,23 @@ class EventsController extends Controller
         }
     }
 
-    public function verify() {
-        /*if(Auth::check()) {
+    public function verify($id) {
+        $jelentkezesek = DB::table('jelentkezes')
+        ->where('esemenyId',$id)
+        ->where('userId', Auth::user()['id'])
+        ->count('jelentkezesId');
+        return view('events.verify')->with('id', $id)->with('applied', $jelentkezesek);
+    }
+
+    public function verified(Request $request) {
+        if(Auth::check()) {
             DB::table('jelentkezes')
             ->where('esemenyId', $request->input('esemenyId'))
-            ->where('userId', $request->input('userId'))
-            ->update(['megjelent' => 1])
+            ->where('userId', $request->input('felhasznaloId'))
+            ->update(['megjelent' => 1]);
+            return view('home')->with('message', 'Sikeres jelentkezés!');
         }
-        else return view('home')->with('message', 'Nincs jogosultsága az oldal megtekintéséhez!');*/
-
-        return view('events.verify');
+        else return view('home')->with('message', 'Nincs jogosultsága az oldal megtekintéséhez!');
     }
 
 }
