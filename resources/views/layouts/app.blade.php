@@ -10,8 +10,11 @@
     <title>@yield('title')</title>
 
     <!-- Scripts -->
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.js"></script>
+    <script src="{{ asset('js/qrCode.js') }}" defer></script>
     <script src="{{ asset('js/app.js') }}" defer></script>
-    <script src="../path/to/flowbite/dist/flowbite.bundle.js"></script>
+    <script src="https://cdn.rawgit.com/davidshimjs/qrcodejs/gh-pages/qrcode.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.8.1/html2pdf.bundle.min.js" integrity="sha512-vDKWohFHe2vkVWXHp3tKvIxxXg0pJxeid5eo+UjdjME3DBFBn2F8yWOE0XmiFcFbXxrEOR1JriWEno5Ckpn15A==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script src="{{ asset('js/navbarToggle.js') }}"></script>
 
     <!-- Fonts -->

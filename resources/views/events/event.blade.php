@@ -2,10 +2,10 @@
 @section('title', 'Részletek')
 
 @section('content')
-<div id="pdf_body">
+<div id="pdf_body#{{ $esemeny->id }}">
 <div class="bg-transparent my-3 rounded-lg lg:mx-52">
     <p class="font-light text-3xl lg:text-5xl text-center">{{ $esemeny->megnevezes }}</p>
-    <div class="flex s-screen" id="qrcode"></div>
+    <div class="flex s-screen" id="qrcode{{ $esemeny->id }}"></div>
 
 </div>
 
@@ -31,7 +31,7 @@
             </p>
             @if($esemeny->dolgozoid == Auth::user()['id'])
                     
-                    <button onclick="save()">QR kód</button>
+                    <button class="QRBtn" data-eventId="{{ $esemeny->id }}">QR kód</button>
             @endif
             @if(!$jelentkezettE)
                 @guest
