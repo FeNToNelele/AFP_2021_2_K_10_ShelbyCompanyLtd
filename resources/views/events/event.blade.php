@@ -26,7 +26,13 @@
             <p class="mb-3 text-2xl text-center">
                 <i>Jelentkezhet még: {{ $esemeny->kapacitas - $jelentkezesek }} fő</i>
             </p>
-            
+            @if($esemeny->dolgozoid == Auth::user()['id'])
+                <form action="{{ route('qr') }}" method="POST">
+                    @csrf
+                    <input type="hidden" name="eventId" value="{{ $esemeny->id }}" />
+                    <button type="submit">QR kód</button>
+                </form>
+            @endif
             @if(!$jelentkezettE)
                 @guest
                     <a href="{{ route('login') }}" class="flex justify-center items-center h-screen rounded-lg w-full text-3xl py-2 px-3 my-5 font-medium text-center text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300">
