@@ -11,7 +11,7 @@ class EventsController extends Controller
        //Még nem lezajlott események kilistázása
         $esemenyek = DB::table('esemeny')
         ->select('id','megnevezes','kapacitas','leiras','kezdet','veg','helyszin','dolgozoid')
-        ->whereDate('kezdet', '>', date('Y.m.d'))
+        /*->whereDate('kezdet', '>', date('Y.m.d'))*/
         ->get();
         return view('events.events')->with('esemenyek', $esemenyek);
     }
