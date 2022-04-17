@@ -17,7 +17,6 @@ class EventsController extends Controller
     }
 
     public function listAnEvent($id) {
-        //1 eseményre 1 felhasználó csak 1x tudjon jelentkezni...
         $jelentkezettE = false;
         if(Auth::check())
         {
@@ -68,11 +67,10 @@ class EventsController extends Controller
             echo "Sikeres esemény felvitel!";
         }
         else echo "Nincs hozzá jogosultsága!";
-        return view('home');
+        return view('home')->with('message', 'Új esemény hozzáadva!');
     }
 
     public function apply(Request $request) {
-        //1 eseményre 1 felhasználó csak 1x tudjon jelentkezni...
         $jelentkezesekSzama = DB::table('jelentkezes')
         ->where([
             ['userId', '=', Auth::user()['id'] ],
@@ -112,7 +110,6 @@ class EventsController extends Controller
     }
 
     public function manageEvents() {
-         //1 eseményre 1 felhasználó csak 1x tudjon jelentkezni...
         if(Auth::check())
         {
         $esemenyek = DB::table('esemeny')
@@ -164,5 +161,13 @@ class EventsController extends Controller
             return redirect('/manageEvents');
         }
         
+    }
+
+    public function generateQR(Request $request) {
+        $esemeny = DB::table('esemeny')
+        ->select('id','megnevezes','kapacitas','leiras','kezdet','veg','helyszin')
+        ->where('id',$request->eventId)
+        ->first();
+        return view('events.genQR')->with('esemeny', $esemeny);
     }
 }
