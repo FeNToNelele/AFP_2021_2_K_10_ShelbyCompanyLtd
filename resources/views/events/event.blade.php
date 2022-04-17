@@ -59,18 +59,4 @@
     </div>
 </div>
 </div>
-
-    <script src="https://cdn.rawgit.com/davidshimjs/qrcodejs/gh-pages/qrcode.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.8.1/html2pdf.bundle.min.js" integrity="sha512-vDKWohFHe2vkVWXHp3tKvIxxXg0pJxeid5eo+UjdjME3DBFBn2F8yWOE0XmiFcFbXxrEOR1JriWEno5Ckpn15A==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-
-    <script type="text/javascript">
-        let eid = {{ $esemeny->id }};
-        var pdf_content = document.getElementById("pdf_body");
-        function save(){
-            new QRCode(document.getElementById("qrcode"), "http://127.0.0.1:8000/verify/"+eid);
-            var pdf_content = document.getElementById("pdf_body");
-            html2pdf(pdf_content);
-            document.getElementById("qrcode").innerHTML = "";
-        }
-    </script>
 @endsection
