@@ -27,7 +27,6 @@ Route::get('/appliedEvents', [App\Http\Controllers\EventsController::class, 'app
 Route::get('/manageEvents', [EventsController::class, 'manageEvents'])->name('manageEvents')->middleware('auth');
 Route::post('/editEventForm', [EventsController::class, 'editEventForm'])->name('editEventForm')->middleware('auth');
 Route::post('/editEvent', [EventsController::class, 'editEvent'])->name('editEvent')->middleware('auth');
-Route::post('/event/qr', [EventsController::class, 'generateQR'])->name('qr')->middleware('auth');
 Route::delete('/deleteEvent', [App\Http\Controllers\EventsController::class, 'deleteEvent'])->middleware('auth')->name('deleteEvent');
 
 Route::delete('/abandon', [App\Http\Controllers\EventsController::class, 'abandonEvent'])->middleware('auth');

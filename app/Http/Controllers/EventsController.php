@@ -163,11 +163,4 @@ class EventsController extends Controller
         
     }
 
-    public function generateQR(Request $request) {
-        $esemeny = DB::table('esemeny')
-        ->select('id','megnevezes','kapacitas','leiras','kezdet','veg','helyszin')
-        ->where('id',$request->eventId)
-        ->first();
-        return view('events.genQR')->with('esemeny', $esemeny);
-    }
 }
