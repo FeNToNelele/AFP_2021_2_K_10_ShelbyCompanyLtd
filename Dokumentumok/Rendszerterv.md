@@ -11,8 +11,50 @@ Backend: Kecs Károly, Nagy Péter Axel,  Sárosi Gábor
 
 Tesztelés: Kecse Károly, Nagy Péter Axel, Sárosi Gábor
 
+## 4. Követelmények
+ - Funkcionális követelmények
+   - Felhasználó bejelentkezési adatainak tárolása
+   - Felhasználói jogkörök kialakítása
+   - Események adatainak tárolása
+     - Események, azokhoz lehetséges résztvevők
+   - Webes környezeten való stabil működés
+ - Nem funkcionális működés
+   - A bejelentkezés nélküli felhasználók ne férhessenek hozzá az események jelentkezéséhez és azok kezeléséhez
+   - Eseményeken megjelentkezről lekérdezhető az egyes statisztika
+     - ehhez csak az adminisztrációs személy férhet hozzá
+   - A bejelentkezés nélküli felhasználó csak az események részleteihez illetve listázásához fér hozzá
+ - Törvényi előírások, szabályok
+   - A web felület szabványos eszközökkel készüljön, html/php/css
+   - Intuitív, átlátható rendszer
+   - GDPR szabályoknak való megfelelés
 
-
+## 5. Funkcionális terv
+ - Rendszerszereplők
+    - Admin  
+    - Dolgozó
+    - Hallgató
+    - Vendég
+ - Rendszerhasználati esetek és lefutásaik:
+    - ADMIN:
+        - Rendszer feletti korlátlan hozzáférés
+        - Események létrehozása
+        - Események szerkesztése
+        - Események törlése
+        - Az egyes eseményekre vonatkozó statisztikák megjelenítése
+    - Vendég
+        - Eseményekhez való hozzáférés, jelentkezés hivatkozáson keresztü
+    - Hallgató
+        - Eseményekhez való hozzáférés, jelentkezés hivatkozáson keresztül
+    - Dolgozó
+        - Eseményekhez való hozzáférés, jelentkezés hivatkozáson keresztül
+        - Események létrehozása, módosítása, törlése
+ - Menü-architektúrák:
+    - BEJELENTKEZÉS:
+        - User autentikáció, jelentkezéshez szükséges
+    
+    - Regisztráció
+        - Felhasználók regisztrációws felülete a rendszerbe, így nem kell minden esetben megadni az alapadatokat
+    - Kijelentkezés
 ## 9. Implementációs terv
 A felület HTML, JS, és PHP nyelven készül. Az oldalakat és azok vezérlését végző fájlokat a framework által karbantartott fájl rendszerezés szerint hoztuk létre.
 A szabványos fájlkezelés végett átláthatóbb és egyszerűbb lesz a későbbi fejlesztési folyamatok során megérteni a rendszer felépítését.
