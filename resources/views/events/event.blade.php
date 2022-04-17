@@ -67,7 +67,7 @@
         let eid = {{ $esemeny->id }};
         var pdf_content = document.getElementById("pdf_body");
         function save(){
-            new QRCode(document.getElementById("qrcode"), "http://127.0.0.1:8000/event/confirm/"+eid);
+            new QRCode(document.getElementById("qrcode"), "http://127.0.0.1:8000/verify/"+eid);
             var pdf_content = document.getElementById("pdf_body");
             html2pdf(pdf_content);
             document.getElementById("qrcode").innerHTML = "";
