@@ -17,18 +17,15 @@
 <div class="flex h-screen">
     <div class="mx-auto">
         @foreach($esemenyek as $esemeny)
-        <div class="p-6 mx-3 max-w-sm inline-block align-middle bg-white rounded-lg">
+        <div id='pdf_body#{{ $esemeny->id }}' class="p-6 mx-3 max-w-sm inline-block align-middle bg-white rounded-lg">
             <a href="/events/{{ $esemeny->id }}">
                 <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900">{{ $esemeny->megnevezes }}</h5>
             </a>
+            <div class="flex s-screen" id="qrcode{{ $esemeny->id }}"></div>
             <p class="mb-3 font-normal text-gray-700">{{ $esemeny->leiras }}</p>
             <p class="mb-3 font-medium text-gray-700">Kezdet: {{ $esemeny->kezdet }}</p>
             <p class="mb-3 font-medium text-gray-700">Vége: {{ $esemeny->veg }}</p>
-            <form method="POST" action="{{ route('editEventForm') }}" class="mb-2">
-                @csrf
-                <input type="hidden" value="{{ $esemeny->id }}" name="esemenyId">
-                <button type="submit" class="m-auto bg-green-600 rounded-xl shadow-lg font-iight text-2xl px-5 py-2.5 text-gray-100 transition hover:bg-green-500 hover:text-black">QR-Kód generálása</button>
-            </form>
+            <button type="submit" data-eventId="{{ $esemeny->id }} class="QRBtn m-auto bg-green-600 rounded-xl shadow-lg font-iight text-2xl px-5 py-2.5 text-gray-100 transition hover:bg-green-500 hover:text-black">QR-Kód generálása</button>
             <form method="POST" action="{{ route('editEventForm') }}" class="mb-2">
                     @csrf
                 <input type="hidden" value="{{ $esemeny->id }}" name="esemenyId">
