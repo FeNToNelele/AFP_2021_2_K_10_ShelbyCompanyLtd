@@ -4,8 +4,8 @@
 @section('content')
 <div id="pdf_body#{{ $esemeny->id }}">
 <div class="bg-transparent my-3 rounded-lg lg:mx-52">
-    <p class="font-light text-3xl lg:text-5xl text-center">{{ $esemeny->megnevezes }}</p>
-    <div class="flex s-screen" id="qrcode{{ $esemeny->id }}"></div>
+    <p class="font-light text-3xl mb-3 lg:text-5xl text-center">{{ $esemeny->megnevezes }}</p>
+    <div class="flex s-screen" id="qrcode"></div>
 
 </div>
 
@@ -26,12 +26,12 @@
             <p class="mb-10 text-2xl">
                 Helyszín: {{ $esemeny->helyszin }}
             </p>
-            <p class="mb-3 text-2xl text-center">
+            <p class="mb-3 text-2xl text-center inline" id="pCapacity">
                 <i>Jelentkezhet még: {{ $esemeny->kapacitas - $jelentkezesek }} fő</i>
             </p>
-            @if($esemeny->dolgozoid == Auth::user()['id'])
-                    
-                    <button class="QRBtn" data-eventId="{{ $esemeny->id }}">QR kód</button>
+            @if($esemeny->dolgozoid == Auth::user()['id'])   
+                
+            <button onclick="save()" id="btnGenerate" class="mb-2 bg-green-600 w-full text-xl rounded-lg shadow-lg font-iight px-5 py-2.5 text-gray-100 transition hover:bg-green-500 hover:text-black inline">QR-kód generálása</button>
             @endif
             @if(!$jelentkezettE)
                 @guest
@@ -42,7 +42,7 @@
                     <form action="{{ route('apply') }}" method="POST">
                         @csrf
                         <input type="hidden" name="esemenyId" value="{{ $esemeny->id }}">
-                        <button type="submit" class="rounded-lg w-full py-2.5 px-3 text-sm font-medium text-center text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300">
+                        <button type="submit" id="btnApplication" class="text-xl rounded-lg w-full py-2.5 px-3 font-medium text-center text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 inline">
                             Jelentkezek
                         </button>
                     </form>
@@ -52,11 +52,55 @@
                 @csrf
                 {{ method_field('delete') }}
                 <input type="hidden" value="{{ $esemeny->id }}" name="esemenyId">
-                <button class="rounded-lg w-full py-2.5 px-3 text-lg font-medium text-center text-white bg-blue-700 transition hover:bg-blue-800 focus:ring-4 focus:ring-blue-300" type="submit">Jelentkezés visszavonása</button>
+                <button class="rounded-lg w-full py-2.5 px-3 text-lg font-medium text-center text-white bg-blue-700 transition hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 inline" type="submit">Jelentkezés visszavonása</button>
             </form>
             @endif
         </div>
     </div>
 </div>
 </div>
+    <script type="text/javascript">
+        let eid = {{ $esemeny->id }};
+        var pdf_content = document.getElementById("pdf_body");
+        function save(){
+            toggleAllButtons();
+            new QRCode(document.getElementById("qrcode"), "http://127.0.0.1:8000/verify/"+eid);
+            var pdf_content = document.getElementById("pdf_body");
+            html2pdf(pdf_content);
+            document.getElementById("qrcode").innerHTML = "";
+            toggleAllButtons();
+        }
+
+        function toggleAllButtons() {
+            var pCapacityState = document.getElementById('pCapacity');
+            if (pCapacityState.classList.contains('inline')) {
+                pCapacityState.classList.remove('inline');
+                pCapacityState.classList.add('hidden');
+            }
+            else {
+                pCapacityState.classList.remove('hidden');
+                pCapacityState.classList.add('inline');
+            }
+
+            var btnGenerateState = document.getElementById('btnGenerate');
+            if (btnGenerateState.classList.contains('inline')) {
+                btnGenerateState.classList.remove('inline');
+                btnGenerateState.classList.add('hidden');
+            }
+            else {
+                btnGenerateState.classList.remove('hidden');
+                btnGenerateState.classList.add('inline');
+            }
+
+            var btnApplication = document.getElementById('btnApplication');
+            if (btnApplication.classList.contains('inline')) {
+                btnApplication.classList.remove('inline');
+                btnApplication.classList.add('hidden');
+            }
+            else {
+                btnApplication.classList.remove('hidden');
+                btnApplication.classList.add('inline');
+            }
+        }
+    </script>
 @endsection
