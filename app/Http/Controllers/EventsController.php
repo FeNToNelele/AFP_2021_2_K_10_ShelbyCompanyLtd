@@ -64,10 +64,9 @@ class EventsController extends Controller
                 'helyszin' => $request->input('helyszin'),
                 'dolgozoId' => Auth::user()['id']  
             ]);
-            echo "Sikeres esemény felvitel!";
+            return redirect('home')->with('message', 'Új rendezvény sikeresen létrehozva!');
         }
-        else echo "Nincs hozzá jogosultsága!";
-        return view('home')->with('message', 'Új esemény hozzáadva!');
+        else return view('home')->with('message', 'Nincs hozzá jogosultsága!');
     }
 
     public function apply(Request $request) {
