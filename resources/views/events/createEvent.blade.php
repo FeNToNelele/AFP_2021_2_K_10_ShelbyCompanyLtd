@@ -6,7 +6,7 @@
 <div class="flex h-screen">
     <div class="m-auto">
         <div class="p-10 bg-gray-100 rounded-lg border border-gray-200 shadow-md sm:p-6 lg:p-8">
-            <form class="space-y-6" method="POST" action="{{ route('register') }}">
+            <form class="space-y-6" method="POST" action="{{ route('registerEvent') }}">
                 @csrf
                 <h3 class="text-2xl text-center text-gray-900">Új esemény</h3>
                 <div>

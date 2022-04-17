@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\EventsController;
+use Illuminate\Support\Facades\Auth;
 
 /*
 |--------------------------------------------------------------------------
@@ -26,6 +27,7 @@ Route::get('/appliedEvents', [App\Http\Controllers\EventsController::class, 'app
 Route::get('/manageEvents', [EventsController::class, 'manageEvents'])->name('manageEvents')->middleware('auth');
 Route::post('/editEventForm', [EventsController::class, 'editEventForm'])->name('editEventForm')->middleware('auth');
 Route::post('/editEvent', [EventsController::class, 'editEvent'])->name('editEvent')->middleware('auth');
+Route::post('/event/qr', [EventsController::class, 'generateQR'])->name('qr')->middleware('auth');
 Route::delete('/deleteEvent', [App\Http\Controllers\EventsController::class, 'deleteEvent'])->middleware('auth')->name('deleteEvent');
 
 Route::delete('/abandon', [App\Http\Controllers\EventsController::class, 'abandonEvent'])->middleware('auth');
@@ -33,5 +35,5 @@ Route::delete('/abandon', [App\Http\Controllers\EventsController::class, 'abando
 Route::get('/events', [EventsController::class, 'listAllEvents'])->name('events');
 Route::get('/events/{id}', [EventsController::class, 'listAnEvent'])->middleware('auth');
 Route::get('/createEvent', [EventsController::class, 'createEvent'])->name('createEvent')->middleware('auth');
-Route::post('/registerEvent', [EventsController::class, 'registerEvent'])->name('register')->middleware('auth');
+Route::post('/registerEvent', [EventsController::class, 'registerEvent'])->name('registerEvent')->middleware('auth');
 
