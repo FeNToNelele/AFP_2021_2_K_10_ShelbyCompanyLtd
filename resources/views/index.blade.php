@@ -15,11 +15,11 @@
     </div>
 
     @foreach( $maiEsemenyek as $esemeny )
-    <div class="p-6 mx-3 max-w-sm inline-block align-middle rounded-lg border shadow-md bg-gray-800 border-gray-700">
+    <div class="p-6 mx-5 max-w-sm inline-block align-middle rounded-lg border shadow-md bg-white">
        <a href="/events/{{ $esemeny->id }}">
            <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900">{{ $esemeny->megnevezes }}</h5>
        </a>
-       <p class="mb-3 font-normal text-gray-400">{{ $esemeny->leiras }}</p>
+       <p class="mb-3 font-normal text-gray-700">{{ $esemeny->leiras }}</p>
        @if(Auth::check())
        <a href="/events/{{ $esemeny->id }}" class="inline-flex items-center py-2 px-3 text-sm font-medium text-center text-white  rounded-lg focus:ring-4 focus:ring-blue-300 bg-blue-600 hover:bg-blue-700">
            Részletek
