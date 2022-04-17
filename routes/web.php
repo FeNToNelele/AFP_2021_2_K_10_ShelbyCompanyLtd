@@ -36,4 +36,5 @@ Route::get('/events/{id}', [EventsController::class, 'listAnEvent'])->middleware
 Route::get('/createEvent', [EventsController::class, 'createEvent'])->name('createEvent')->middleware('auth');
 Route::post('/registerEvent', [EventsController::class, 'registerEvent'])->name('registerEvent')->middleware('auth');
 
-Route::get('/verify/{id}', [App\Http\Controllers\EventsController::class, 'verify'])->middleware('auth');
+Route::get('/verify/{id}', [App\Http\Controllers\EventsController::class, 'verify'])->middleware('auth')->name('verify');
+Route::put('/verify', [App\Http\Controllers\EventsController::class, 'verified'])->middleware('auth')->name('verify');
