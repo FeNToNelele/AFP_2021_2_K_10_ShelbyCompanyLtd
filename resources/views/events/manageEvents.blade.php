@@ -2,15 +2,17 @@
 @section('title', 'Kezelés')
 
 @section('content')
-<div class="flex">
-    <div class="grid grid-rows-1 grid-cols-3 w-full my-5">
-        <div></div>
-        <div>
-            <a href="{{ route('createEvent') }}" class="m-auto bg-green-600 rounded-xl shadow-lg font-iight text-2xl px-5 py-2.5 text-gray-100 transition text-center hover:bg-green-500 hover:text-gray-100">
-                Új esemény hozzáadása
-            </a>
-        </div>
-        <div></div>
+
+@if (Session::has('message'))
+    <div class="mx-auto mt-3 py-2.5 rounded-xl bg-white shadow-xl">
+        <p class="px-2 text-3xl text-black font-light text-center">{{ Session::get('message') }}</p>
+    </div>
+@endif
+<div class="flex mt-10 mb-5">
+    <div class="mx-auto">
+        <form action="{{ route('createEvent') }}" method="GET">
+            <button type="submit" onclick="{{ route('createEvent') }}" class="m-auto bg-green-600 rounded-xl shadow-lg font-iight text-2xl px-5 py-2.5 text-gray-100 transition text-center hover:bg-green-500 hover:text-gray-100">Új esemény hozzáadása</button>
+        </form>
     </div>
 </div>
 
@@ -25,9 +27,9 @@
             <p class="mb-3 font-normal text-gray-700">{{ $esemeny->leiras }}</p>
             <p class="mb-3 font-medium text-gray-700">Kezdet: {{ $esemeny->kezdet }}</p>
             <p class="mb-3 font-medium text-gray-700">Vége: {{ $esemeny->veg }}</p>
-            <button type="submit" data-eventId="{{ $esemeny->id }} class="QRBtn m-auto bg-green-600 rounded-xl shadow-lg font-iight text-2xl px-5 py-2.5 text-gray-100 transition hover:bg-green-500 hover:text-black">QR-Kód generálása</button>
+            <button type="submit" data-eventId="{{ $esemeny->id }}" class="QRBtn m-auto mb-2 bg-green-600 rounded-xl shadow-lg font-iight text-2xl px-5 py-2.5 text-gray-100 transition hover:bg-green-500 hover:text-black">QR-Kód generálása</button>
             <form method="POST" action="{{ route('editEventForm') }}" class="mb-2">
-                    @csrf
+                @csrf
                 <input type="hidden" value="{{ $esemeny->id }}" name="esemenyId">
                 <button type="submit" class="m-auto bg-yellow-400 rounded-xl shadow-lg font-iight text-2xl px-5 py-2.5 text-gray-100 transition hover:bg-yellow-300 hover:text-black">Módosítás</button>
             </form>
