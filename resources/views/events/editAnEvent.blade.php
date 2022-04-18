@@ -9,10 +9,10 @@
 <div class="flex h-screen">
     <div class="mx-auto">
         <div class="p-3 inline-block align-middle bg-white rounded-lg font-light border shadow-xl text-gray-700">
-            <form class="space-y-6" method="POST" action="{{ route('editEvent') }}">
+            <form method="POST" action="{{ route('editEvent') }}">
                 @csrf
                 
-                <h3 class="text-2xl text-center text-gray-900">Esemény módosítása</h3>
+                <h3 class="text-2xl mb-3 text-center text-gray-900">Esemény módosítása</h3>
                 <div>
                     <input type="hidden" value="{{ $esemeny->id }}" name="esemenyId">
                     <label for="megnevezes" class="block mb-2 text-sm font-medium text-gray-900">Megnevezés:</label>
@@ -28,7 +28,7 @@
                     </label>
                     <textarea
                       class="
-                        form-control block w-full px-3 py-1.5 text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded-xl
+                        form-control block w-full px-3 py-1.5 text-base font-normal text-black bg-white bg-clip-padding border border-solid border-gray-300 rounded-xl
                         transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none"
                       id="leiras"  rows="5" name="leiras" placeholder="Tartson velünk az Eged hegyre, ahol megvizsgáljuk közösen a hegy élővilágát! Szeles környékről van szó, így mindenképp hozzon magával sapkát!"
                     >{{ $esemeny->leiras }}</textarea>

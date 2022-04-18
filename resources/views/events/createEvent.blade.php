@@ -3,8 +3,8 @@
 
 @section('content')
 <script type="text/javascript" src="{{ asset('js/events/getCurrentDate.js') }}"></script>
-<div class="flex h-screen">
-    <div class="m-auto">
+<div class="flex mt-3">
+    <div class="mx-auto">
         <div class="p-10 bg-gray-100 rounded-lg border border-gray-200 shadow-md sm:p-6 lg:p-8">
             <form class="space-y-6" method="POST" action="{{ route('registerEvent') }}">
                 @csrf
