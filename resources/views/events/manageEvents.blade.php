@@ -27,17 +27,17 @@
             <p class="mb-3 font-normal text-gray-700">{{ $esemeny->leiras }}</p>
             <p class="mb-3 font-medium text-gray-700">Kezdet: {{ $esemeny->kezdet }}</p>
             <p class="mb-3 font-medium text-gray-700">Vége: {{ $esemeny->veg }}</p>
-            <button type="submit" data-eventId="{{ $esemeny->id }}" class="QRBtn m-auto mb-2 bg-green-600 rounded-xl shadow-lg font-iight text-2xl px-5 py-2.5 text-gray-100 transition hover:bg-green-500 hover:text-black">QR-Kód generálása</button>
+            <button type="submit" id="btnGenerate#{{ $esemeny->id }}" data-id="{{ $esemeny->id }}" class="QRBtn m-auto mb-2 bg-green-600 rounded-xl shadow-lg font-iight text-2xl px-5 py-2.5 text-gray-100 transition hover:bg-green-500 hover:text-black inline">QR-Kód generálása</button>
             <form method="POST" action="{{ route('editEventForm') }}" class="mb-2">
                 @csrf
                 <input type="hidden" value="{{ $esemeny->id }}" name="esemenyId">
-                <button type="submit" class="m-auto bg-yellow-400 rounded-xl shadow-lg font-iight text-2xl px-5 py-2.5 text-gray-100 transition hover:bg-yellow-300 hover:text-black">Módosítás</button>
+                <button type="submit" id="updateForm#{{ $esemeny->id }}" class="m-auto bg-yellow-400 rounded-xl shadow-lg font-iight text-2xl px-5 py-2.5 text-gray-100 transition hover:bg-yellow-300 hover:text-black inline">Módosítás</button>
             </form>
             <form action = "{{ route('deleteEvent') }}" method="POST">
                 @csrf
                 {{ method_field('delete') }}
                 <input type="hidden" name="esemenyId" value="{{ $esemeny->id }}">
-                <button type="submit" value="Törlés"  class="m-auto bg-red-900 rounded-xl shadow-lg font-iight text-2xl px-5 py-2.5 text-gray-100 transition hover:bg-red-700 hover:text-gray-100">Törlés</button>
+                <button type="submit" value="Törlés" id="deleteForm#{{ $esemeny->id }}" class="m-auto bg-red-900 rounded-xl shadow-lg font-iight text-2xl px-5 py-2.5 text-gray-100 transition hover:bg-red-700 hover:text-gray-100 inline">Törlés</button>
             </form>
         </div>
         @endforeach
