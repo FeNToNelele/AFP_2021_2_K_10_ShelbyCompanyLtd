@@ -1,5 +1,6 @@
 {
     "/js/app.js": "/js/app.js",
-    "js/qrcode.js": "/js/qrcode.js",
+    "/js/qrCode.js": "/js/qrCode.js",
+    "/js/table2excel.js": "/js/table2excel.js",
     "/css/app.css": "/css/app.css"
 }
