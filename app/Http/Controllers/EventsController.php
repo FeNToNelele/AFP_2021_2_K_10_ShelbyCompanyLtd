@@ -161,6 +161,10 @@ class EventsController extends Controller
         }
     }
 
+    public function getEventStatistics($id) {
+        return view('events.getEventStatistics');
+    }
+
     public function verify($id) {
         $jelentkezesek = DB::table('jelentkezes')
         ->where('esemenyId',$id)
