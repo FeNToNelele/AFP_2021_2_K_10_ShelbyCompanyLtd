@@ -166,9 +166,6 @@ class EventsController extends Controller
         ->select('userId')
         ->where('esemenyId', $id)
         ->get();
-        /*"select name, email, accountType, szervezetiEgyseg from users inner join dolgozo on (users.id=dolgozo.dolgozoid)"; 
-"select name, email, accountType, neptunKod from users inner join hallgato on (users.id=hallgato.hallgatoId)";  
-"select name, email, accountType, telepules from users inner join kulsos on (users.id=kulsos.kulsosId)"; */
 
         $hallgatok = DB::table('hallgato')
         ->join('users', 'users.id', '=', 'hallgato.hallgatoId')
@@ -185,9 +182,9 @@ class EventsController extends Controller
         $kulsosok = DB::table('kulsos')
         ->join('users', 'users.id', '=', 'kulsos.kulsosId')
         ->select('users.name','users.id', 'users.email', 'kulsos.telepules')
-        //->whereIn('kulsos.kulsosId', $IDs)
         ->whereIn('users.id', json_decode(json_encode($IDs), true))
         ->get();
+        
         return view('events.getEventStatistics')
         ->with('hallgatok', $hallgatok)
         ->with('dolgozok', $dolgozok)
