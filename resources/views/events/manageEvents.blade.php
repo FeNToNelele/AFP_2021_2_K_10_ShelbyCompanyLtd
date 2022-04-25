@@ -35,7 +35,7 @@
                 <button type="submit" id="getEventStatistics#{{ $esemeny->id }}" class="m-auto mb-2 bg-blue-600 rounded-xl shadow-lg font-iight text-2xl px-5 py-2.5 text-gray-100 transition hover:bg-blue-500 hover:text-black inline">Statisztika</button>
             </form>
 
-            <form method="POST" action="{{ route('statistics', $esemeny->id) }}" class="mb-2">
+            <form method="POST" action="{{ route('editEventForm', $esemeny->id) }}" class="mb-2">
                 @csrf
                 <input type="hidden" value="{{ $esemeny->id }}" name="esemenyId">
                 <button type="submit" id="updateForm#{{ $esemeny->id }}" class="m-auto bg-yellow-400 rounded-xl shadow-lg font-iight text-2xl px-5 py-2.5 text-gray-100 transition hover:bg-yellow-300 hover:text-black inline">Módosítás</button>
