@@ -96,5 +96,17 @@ $(document).ready(function() {
                 leadBtn.classList.add('inline');
             }
         }
+         var statBtn = document.getElementById('getEventStatistics#'+eid);
+        console.log(statBtn);
+        if(statBtn) {
+            if (statBtn.classList.contains('inline')) {
+                statBtn.classList.remove('inline');
+                statBtn.classList.add('hidden');
+            }
+            else {
+                statBtn.classList.remove('hidden');
+                statBtn.classList.add('inline');
+            }
+        }
     }
 });
