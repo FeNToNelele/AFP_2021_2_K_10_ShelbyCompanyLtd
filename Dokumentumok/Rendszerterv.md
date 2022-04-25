@@ -90,6 +90,23 @@ Fejlesztői eszközök:
 
 -Tailwind
 
+## 7. Architektúrális terv
+Backend:
+
+-A backend fejlesztéséhez szükséges egy adatbázis szerver, amit MySQL-lel valósítuttuk meg
+
+-Laravel framework a szabványos fájlkezelés és összetettebb fejlesztési lehetőségek végett
+
+-PHP
+
+-JavaScript
+
+Frontend:
+
+-BootStrap
+
+-TailWind CSS
+
 ##  8. Adatbázis terv
 
 ![Adatbázis terv](https://imgur.com/Ji4ywqC.png)
