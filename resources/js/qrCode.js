@@ -84,5 +84,17 @@ $(document).ready(function() {
                 jelentkezBtn.classList.add('inline');
             }
         }
+        var leadBtn = document.getElementById('btnAbandon#'+eid);
+        console.log(leadBtn);
+        if(leadBtn) {
+            if (leadBtn.classList.contains('inline')) {
+                leadBtn.classList.remove('inline');
+                leadBtn.classList.add('hidden');
+            }
+            else {
+                leadBtn.classList.remove('hidden');
+                leadBtn.classList.add('inline');
+            }
+        }
     }
 });
