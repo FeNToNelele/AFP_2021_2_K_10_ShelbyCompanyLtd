@@ -26,6 +26,10 @@ Backend: Kecs Károly, Nagy Péter Axel,  Sárosi Gábor
 
 Tesztelés: Kecse Károly, Nagy Péter Axel, Sárosi Gábor
 
+## 3. Üzleti folyamatok modellje
+
+![Üzleti folyamatok modellje](https://imgur.com/7O7U80E.png)
+
 ## 4. Követelmények
  - Funkcionális követelmények
    - Felhasználó bejelentkezési adatainak tárolása
