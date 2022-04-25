@@ -90,6 +90,10 @@ Fejlesztői eszközök:
 
 -Tailwind
 
+##  8. Adatbázis terv
+
+![Adatbázis terv](https://imgur.com/Ji4ywqC.png)
+
 ## 9. Implementációs terv
 A felület HTML, JS, és PHP nyelven készül. Az oldalakat és azok vezérlését végző fájlokat a framework által karbantartott fájl rendszerezés szerint hoztuk létre.
 A szabványos fájlkezelés végett átláthatóbb és egyszerűbb lesz a későbbi fejlesztési folyamatok során megérteni a rendszer felépítését.
