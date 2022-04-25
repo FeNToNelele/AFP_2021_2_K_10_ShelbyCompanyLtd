@@ -42,7 +42,7 @@
                         <form action="{{ route('apply') }}" method="POST">
                             @csrf
                             <input type="hidden" name="esemenyId" value="{{ $esemeny->id }}">
-                            <button type="submit" id="btnApplication" class="text-xl rounded-lg w-full py-2.5 px-3 font-medium text-center text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 inline">
+                            <button type="submit" id="btnApplication#{{ $esemeny->id}}" class="text-xl rounded-lg w-full py-2.5 px-3 font-medium text-center text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 inline">
                                 Jelentkezek
                             </button>
                         </form>
