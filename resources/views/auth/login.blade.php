@@ -15,16 +15,6 @@
                 <label for="password" class="block mb-2 text-sm font-medium text-gray-900 ">Jelszó:</label>
                 <input type="password" name="password" id="password" placeholder="••••••••" class="bg-gray-50 border border-gray-300 text-black text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" required>
             </div>
-            <div class="flex items-start my-3">
-                <div class="flex items-start">
-                    <div class="flex items-center h-5">
-                    <input id="remember" aria-describedby="remember" type="checkbox" class="w-4 h-4 bg-gray-50 rounded border border-gray-900 focus:ring-3 focus:ring-blue-300">
-                    </div>
-                    <div class="ml-3 text-sm">
-                    <label for="remember" class="font-medium text-gray-900">Emlékezz rám</label>
-                    </div>
-                </div>
-            </div>
             <button type="submit" class="w-full text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center ">Bejelentkezés</button>
             <div class="flex items-start my-3">
                 <a href="{{ route('password.request') }}" class="text-sm font-light text-right text-blue-700 hover:underline"><i>Elfelejtette jelszavát?</i></a>
