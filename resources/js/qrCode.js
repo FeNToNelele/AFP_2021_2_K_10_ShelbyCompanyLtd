@@ -72,5 +72,17 @@ $(document).ready(function() {
                 deleteForm.classList.add('inline');
             }
         }
+        var jelentkezBtn = document.getElementById('btnApplication#'+eid);
+        console.log(jelentkezBtn);
+        if(jelentkezBtn) {
+            if (jelentkezBtn.classList.contains('inline')) {
+                jelentkezBtn.classList.remove('inline');
+                jelentkezBtn.classList.add('hidden');
+            }
+            else {
+                jelentkezBtn.classList.remove('hidden');
+                jelentkezBtn.classList.add('inline');
+            }
+        }
     }
 });
