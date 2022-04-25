@@ -5,7 +5,7 @@
 [Letöltés](https://www.apachefriends.org/xampp-files/8.0.13/xampp-windows-x64-8.0.13-0-VS16-installer.exe)
 - Telepítsük, majd indítsuk el!
 
-Opcionális: A megkapott questionnaire.sql fájlt mozgassuk a telepített program főkönyvtárába! (C:/xampp)
+Opcionális: A megkapott sportesemeny.sql fájlt mozgassuk a telepített program főkönyvtárába! (C:/xampp)
 
 - A felugró menüben kattintsunk a MySQL sorában a Start gombra! Ekkor elindul a MySQL szerverünk, aminek segítségével minden szükséges adatot el tudunk a későbbiekben tárolni!
 - Kattintsunk a menüben a Shell gombra!
@@ -19,12 +19,12 @@ mysql -u root -p
 
 Hozzuk létre az adatbázist:
 ```
-create database questionnaire;
+create database sportesemeny;
 ```
 
 Opcionális: CTRL+C billentyűkombinációval lépjünk ki, majd importáljuk be az adatbázist:
 ```
-mysql -u root -p questionnaire < questionnaire.sql
+mysql -u root -p sportesemeny < sportesemeny.sql
 ```
 
 
