@@ -70,6 +70,26 @@ Tesztelés: Kecse Károly, Nagy Péter Axel, Sárosi Gábor
     - Regisztráció
         - Felhasználók regisztrációws felülete a rendszerbe, így nem kell minden esetben megadni az alapadatokat
     - Kijelentkezés
+
+
+## 6. Fizikai környezet
+Az alkalmazás WEB platformon készül.
+
+ A BootStrap alkalmazása miatt hordozható eszközökön (okostelefon, táblagépek) illetve asztali számítógépeken is egyformán elérhető.
+Laravel framework segítségével szabványos eljárásokkal készült backend és frontend
+
+Fejlesztői eszközök:
+
+-Visual Studio Code
+
+-MySQL Workbench
+
+-Laravel
+
+-XAMPP
+
+-Tailwind
+
 ## 9. Implementációs terv
 A felület HTML, JS, és PHP nyelven készül. Az oldalakat és azok vezérlését végző fájlokat a framework által karbantartott fájl rendszerezés szerint hoztuk létre.
 A szabványos fájlkezelés végett átláthatóbb és egyszerűbb lesz a későbbi fejlesztési folyamatok során megérteni a rendszer felépítését.
