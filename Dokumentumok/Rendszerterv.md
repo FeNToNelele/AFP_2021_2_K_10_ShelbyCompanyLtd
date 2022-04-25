@@ -84,6 +84,14 @@ Minden teszt 1 hetet fog igénybe venni és minden funkció átvizsgálásra fog
 
 A tesztjegyzőkönyv megtalálható a többi dokumentáció között.
 
+## 11. Telepítési terv
+A weboldal használatához szüksége lesz a felhasználónak egy böngésző használatához 
+(Opera, Microsoft Edge, Google Chrome, Mozilla Firefox), más egyébre nincs szüksége a felhasználónak, 
+illetve telefonos applikáció használata esetén letölteni 
+a Google Play áruházból vagy App Store-ból.
+
+
+
 ## 12. Karbantartási terv
 “Az alkalmazás folyamatos üzemeltetése és karbantartása, mely
 
