@@ -52,7 +52,7 @@
                     @csrf
                     {{ method_field('delete') }}
                     <input type="hidden" value="{{ $esemeny->id }}" name="esemenyId">
-                    <button class="rounded-lg w-full py-2.5 px-3 text-lg font-medium text-center text-white bg-blue-700 transition hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 inline" type="submit">Jelentkezés visszavonása</button>
+                    <button id="btnAbandon#{{ $esemeny->id}}" class="rounded-lg w-full py-2.5 px-3 text-lg font-medium text-center text-white bg-blue-700 transition hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 inline" type="submit">Jelentkezés visszavonása</button>
                 </form>
                 @endif
             </div>
