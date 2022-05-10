@@ -40,6 +40,23 @@ A Béta teszt elkészült, a letesztelt funkciók megfelelően működtek a webo
 A végleges tesztelésnél az összes fent felsorolt vizsgálati elem újra ellenőrzésre kerül és az újabb funkciók is.
 ## Végleges teszt
 
+| Vizsgálat | Tesztelés időpontja | Elvárás | Eredmény | Hibák |
+| :---: | --- | --- | --- | --- |
+| Adatbázis | 2022.05.09. | Adatbázis működés ellenőrzése. | A táblák az oldal által küldött adatokat sikeresen el tudja tárolni. | Nem találtam hibát. |
+| Regisztráció | 2022.05.09. | Regisztrálás a weboldalra. | Sikeresen megtörtént a regisztráció. | Nem találtam hibát. |
+| Bejelentkezés | 2022.05.09. | A létrehozott fiókkal a bejelentkezés. | A fiókkal sikerült belépni a weboldalra. | Nem találtam hibát. |
+| Jogosultság | 2022.05.09. | Jogosultságok kezelése. | A jogosultság kezelés megfelelően működik. | Nem találtam hibát. |
+| Autentikáció | 2022.05.09. | Csak felhasználói fiók azonosítása után tudjunk hozzáférni a rendszerhez bizonyos funkcióihoz. | Bejelentkezés nélkül nem értem el az oldal funkcióját. | Nem találtam hibát. |
+| Menüpontok | 2022.05.09. | A menüpontok megfelelő működése. | A menüpontok megfelelően működnek. | Nem találtam hibát. |
+| Események megjelenítése | 2022.05.09. | A létrehozott események megfelelő megjelenítése. |Az események rendesen megjelentek. | Nem találtam hibát. |
+| Esemény leírás megjelenítése | 2022.05.09. | A meghirdetett esemény leírás megjelenítése. | Az esemény leírások rendesen jelennek meg. | Nem találtam hibát. |
+| Esemény módosítása | 2022.05.09. | A meghirdetett esemény módosítása. | Az esemény megfelelően módosult. | Nem találtam hibát. |
+| Jelentkezett események kilistázása | 2022.05.09. | Azoknak az eseményeknek a megjelenítése amire a felhasználó jelentkezett. | A jelentkezett események tökéletesen megjelentek. | Nem találtam hibát. |
+| Frontend | 2022.05.09. | A weboldal igényes, letisztult megjelenése. | A menürendszer egyszerű/minimalista, a weboldal intuitív. | Nem találtam hibát. |
+| Backend | 2022.05.09. | A backendben megírt PHP-SQL-JS kódok megfelelő működése. | A backend kódjai tökéletesen működtek. | Nem találtam hibát. |
+
+A végleges teszt lezajlott, a program átadásra kész a megrendelőnek.
+
 Tesztelést végezte és írta: Nagy Péter Axel 
 
-Befejezve:
+Befejezve: 2022.05.09
